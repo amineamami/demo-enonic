@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/styles.css'})}"
+          href="/assets/css/styles.css">
+    <script async data-th-src="${portal.assetUrl({'_path=js/web-components/wb.js'})} "></script>
+
+
+</head>
+
+<body>
+
+<main data-portal-region="main" class="xp-region">
+    <th:block data-th-if="${mainRegion}">
+        <th:block data-th-each="component : ${mainRegion.components}">
+            <th:block data-portal-component="${component.path}"></th:block>
+        </th:block>
+    </th:block>
+</main>
+
+</body>
+</html>
